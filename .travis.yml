@@ -1,14 +1,15 @@
 language: scala
-
 scala:
 - 2.11.11
-
 sudo: required
-
 services:
-  - docker
-
+- docker
 script:
-  - sbt clean test assembly
-  - docker build . -t prsna23/httphelloworld
-  - docker push prsna23/httphelloworld
+- sbt clean test assembly
+- docker build . -t prsna23/httphelloworld
+- echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
+- docker push prsna23/httphelloworld
+env:
+  global:
+  - secure: VG3BKEZYHUdAs7FenYTbUNokVSiOwwEhSmsU5qgcEU81jculWH2lqqEqC34wRbPuXcba4TBDx29wZWA6oQB/jdaLamcAUL6AOpzrI5buFmZtlFbG2fZc8cEGg48Qnv0+Xgev1gFkiRS/hjxC7VPRS+RyUPcuQZ65AkRHIuBv/wT9DzS07YajBZ79BwFaWffckVGjRHq31EOb4msxg0oqGS8/gD7FzMpcuFyG//xw35WN0nKZSMPMXsqbiPFe5iwAaeDr2+kjDlZk4J559K9nXOJFau9JvacvWG8AwZZQn4ZDH+5Zacw3x4BcMVtGpFcHIuhThCtHhS9t6BeuorcW475ubHCkgDSejn9H/M0la5UU1s9+DDD6q41BC2mxMvoKZ7R4O0KDMFVQ0T+QUaky6v0aX3tJAe/XpTjS6yjTIXoUelexR2rBl4WnThXlZaWjSpclOjwci1qY7jBJ+n6zUow80u4f1FJJbOpOhdK/Pg/kag8rbN9hgU/lCRRxUZcz03s+VcyizeatWP6M1Q8/0Aej3c5aZBlY8/EYXUPfESjDRL6mjJ5IF70LbG5/sXE9djZQaNjSpQKNgGHDTjHnHrE3jG/n4bNduHUjJUgVoFIznUrkKt/GuUgeO1a0GLZuLwq6d4EgedhoMLK9YLBf6qy2uYsUO+vgqiP7q4HHI90=
+  - secure: W5y/iRVrf1ceOtYJPwHrQ9mB6amWFh+J5QX8M+RTON+eH93nTvKaC1aVy7/QQ1XIRU4iqutJY0NDst3fvNT34Ft///o19Mc1sJS9QPX5EYQcG6i75+BFjo4r6iPIZVpFmZEkTLechQwQhhyXCwb8ZgKT9gT8j9OhlMG0e/Ysxlez3gYxireCPFQpV6nWO/HGLz2cuQVXjOmD6+INGbIp0u9+qAFfG+IzEV1VbUKtWl5LRq1fzKKGaAPzDA9KHTJ++hXvMFVOBQ1RA6f9o7aJQFvnTTKcd+N5YfFMUKi0paC7tqpSJZBxSBWMZDRnL7OuzVUyDd6TstPfDPw8WXhHKn5l4zl5JOcRq/plChl8fP9wr6q3MN9OtYWHJmae0zKHPv3o1IulKRUiFTfQehT/swW0P18IDyV7YfmmMq+GS1dpheD/ZKUCxArFfldp5X1Pb3sCkzW0A9qvk9pue2Pbp5+JZlUgPLO1YPuCrRP7ITH8H1nYLf8vejDfEhObpjr844LF09hA1o5mNn5BAyM3vF93kU7WBQ9ToywEBVaV0PAqHSSQyWlwyFUn35QrCypjQoDhDwIYY/iOMHxYFeZ2saj5D0fFVmYBwLGDKDMZlqqciv6CEY/eUQZoLa4X2dycRYeqKb65BpnCTDZuJoq1xo1jzDMM0Lr73abBS/8yX9I=
