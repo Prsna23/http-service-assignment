@@ -5,7 +5,7 @@ class HttpHelloWorldSpec extends FlatSpec with Matchers with ScalatestRouteTest 
 
   "Rest service for /greet/name" should "greet Hello $name" in {
     Get("/greet/Prasanna")  ~> HttpHelloWorld.route ~> check {
-      responseAs[String] should be("Hello, Prasanna")
+      responseAs[String] should be("Hello Prasanna")
     }
   }
 

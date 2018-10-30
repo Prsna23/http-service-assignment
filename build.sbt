@@ -12,3 +12,5 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %%"akka-http-testkit-experimental" % "1.0",
   "org.scalatest" %% "scalatest" % "2.2.5" % "test"
 )
+
+test in assembly := {}
