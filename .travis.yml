@@ -6,9 +6,9 @@ services:
 - docker
 script:
 - sbt clean test assembly
-- docker build . -t prsna23/httphelloworld
+- docker build . -t prsna23/httphelloworld:latest
 - echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
-- docker push prsna23/httphelloworld
+- docker push prsna23/httphelloworld:latest
 env:
   global:
   - secure: VG3BKEZYHUdAs7FenYTbUNokVSiOwwEhSmsU5qgcEU81jculWH2lqqEqC34wRbPuXcba4TBDx29wZWA6oQB/jdaLamcAUL6AOpzrI5buFmZtlFbG2fZc8cEGg48Qnv0+Xgev1gFkiRS/hjxC7VPRS+RyUPcuQZ65AkRHIuBv/wT9DzS07YajBZ79BwFaWffckVGjRHq31EOb4msxg0oqGS8/gD7FzMpcuFyG//xw35WN0nKZSMPMXsqbiPFe5iwAaeDr2+kjDlZk4J559K9nXOJFau9JvacvWG8AwZZQn4ZDH+5Zacw3x4BcMVtGpFcHIuhThCtHhS9t6BeuorcW475ubHCkgDSejn9H/M0la5UU1s9+DDD6q41BC2mxMvoKZ7R4O0KDMFVQ0T+QUaky6v0aX3tJAe/XpTjS6yjTIXoUelexR2rBl4WnThXlZaWjSpclOjwci1qY7jBJ+n6zUow80u4f1FJJbOpOhdK/Pg/kag8rbN9hgU/lCRRxUZcz03s+VcyizeatWP6M1Q8/0Aej3c5aZBlY8/EYXUPfESjDRL6mjJ5IF70LbG5/sXE9djZQaNjSpQKNgGHDTjHnHrE3jG/n4bNduHUjJUgVoFIznUrkKt/GuUgeO1a0GLZuLwq6d4EgedhoMLK9YLBf6qy2uYsUO+vgqiP7q4HHI90=
